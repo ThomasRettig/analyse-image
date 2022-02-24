@@ -42,7 +42,8 @@ h2 {
 #drop-zone {
   width: 350px;
   aspect-ratio: 16 / 9;
-  background-color: green;
+  background-color: #eee;
+  border-radius: var(--border-radius);
 }
 
 .progress {
@@ -98,5 +99,9 @@ h2 {
 
   html {
     color-scheme: dark;
+  }
+
+  #drop-zone {
+    background-color: #1c1c1c;
   }
 }
