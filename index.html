@@ -13,6 +13,7 @@
 		<link rel="canonical" href="https://img-analyse.netlify.app/">
 		<!--Script-->
 		<script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
+		<script src="resemble.js"></script>
 	</head>
 	<body>
 		<header>
@@ -47,6 +48,7 @@
 		<script>
 			$(function() {
 			    var $target = $("#drop-zone");
+			    var $targetLabel = $("#drop-zone-label");
 
 			    function dropZone($target, onDrop) {
 			        $target
@@ -68,12 +70,13 @@
 			                event.stopPropagation();
 			                event.preventDefault();
 
-			                $target.removeClass("drag-over");
+			                $target.addClass("bg-transparent");
+			                $targetLabel.addClass("visibility-hidden");
 
 			                var droppedImage = new Image();
 			                var fileReader = new FileReader();
 
-			                fileReader.onload = function(event) {
+			                fileReader.onload = (event) => {
 			                    droppedImage.src = event.target.result;
 			                    $target.html(droppedImage);
 			                };
@@ -99,6 +102,5 @@
 
 			});
 		</script>
-		<script src="resemble.js"></script>
 		</body>
 	</html>
