@@ -46,6 +46,13 @@ h2 {
   border-radius: var(--border-radius);
 }
 
+#drop-zone-label {
+  text-align: center;
+  position: relative;
+  left: 0px;
+  right: 0px;
+}
+
 .progress {
     height: 20px;
     margin-bottom: 20px;
