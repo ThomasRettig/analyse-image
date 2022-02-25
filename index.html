@@ -3,11 +3,16 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Analyse image</title>
-		<meta name="description" content="A client-side tool to analyse images.">
-		<meta name="author" content="Thomas Rettig">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="style.css">
 		<link rel="icon" href="https://twemoji.maxcdn.com/2/svg/1f50e.svg" type="image/svg+xml">
+		<!--SEO stuff-->
+		<meta name="description" content="A client-side tool to analyse images.">
+		<meta name="keywords" content="PWA, tool, image">
+		<meta name="author" content="Thomas Rettig">
+		<link rel="canonical" href="https://img-analyse.netlify.app/">
+		<!--Script-->
+		<script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
 	</head>
 	<body>
 		<header>
@@ -18,7 +23,7 @@
 				<p id="drop-zone-label">Drop image here</p>
 				<div id="drop-zone" class="drop-zone" aria-labelledby="drop-zone-label"></div>
 			</section>
-			<section id="image-data" style="display:none;">
+			<section id="image-data" style="display: none;">
 				<h2>RGB</h2>
 				<div class="progress progress-danger">
 					<div id="red" class="bar" style="width: 0%;"></div>
@@ -39,8 +44,6 @@
 				</div>
 			</section>
 		</main>
-		<script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
-		<script src="https://rsmbl.github.io/Resemble.js/resemble.js"></script>
 		<script>
 			$(function() {
 			    var $target = $("#drop-zone");
@@ -96,5 +99,6 @@
 
 			});
 		</script>
+		<script src="resemble.js"></script>
 		</body>
 	</html>
