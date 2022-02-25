@@ -118,3 +118,7 @@ h2 {
 .visibility-hidden {
   visibility: hidden;
 }
+
+.fade {
+  opacity: 0.8;
+}

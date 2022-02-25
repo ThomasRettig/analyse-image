@@ -24,7 +24,7 @@
 				<p id="drop-zone-label">Drop image here</p>
 				<div id="drop-zone" class="drop-zone" aria-labelledby="drop-zone-label"></div>
 			</section>
-			<section id="image-data" style="display: none;">
+			<section id="image-data" style="display:none;" aria-live="polite">
 				<h2>RGB</h2>
 				<div class="progress progress-danger">
 					<div id="red" class="bar" style="width: 0%;" aria-label="red"></div>
@@ -49,6 +49,7 @@
 			$(function() {
 			    var $target = $("#drop-zone");
 			    var $targetLabel = $("#drop-zone-label");
+			    var dragTimer;
 
 			    function dropZone($target, onDrop) {
 			        $target
@@ -98,6 +99,19 @@
 			            $("#white").css("width", data.white + "%");
 			            $("#black").css("width", data.black + "%");
 			        });
+			    });
+			    
+			    $target.on('dragover', function(e) {
+			      var dt = e.originalEvent.dataTransfer;
+			      if (dt.types && (dt.types.indexOf ? dt.types.indexOf('Files') != -1 : dt.types.contains('Files'))) {
+			        $target.addClass("fade");
+			        window.clearTimeout(dragTimer);
+			      }
+			    });
+			    $target.on('dragleave', function(e) {
+			      dragTimer = window.setTimeout( () => {
+			        $target.removeClass("fade");
+			      }, 25);
 			    });
 
 			});
