@@ -17,12 +17,12 @@ html {
 
 img {
 	max-width: 100%;
-  background-image: url("transparent-background.png");
+  background-image: url("transparent-background.png"); /* for (partially) transparent images */
   background-position: center;
 }
 
 body {
-	margin: 40px auto;
+	margin: 30px auto;
 	font-family: var(--body-font);
 	padding: 0 40px;
 	display: flex;
@@ -39,14 +39,6 @@ h1 {
 
 h2 {
   font-weight: 500;
-}
-
-.bg-transparent {
-  background-color: transparent !important;
-}
-
-.visibility-hidden {
-  visibility: hidden;
 }
 
 #drop-zone {
@@ -116,4 +108,13 @@ h2 {
   #drop-zone {
     background-color: #1c1c1c;
   }
+}
+
+/* utility classes */
+.bg-transparent {
+  background-color: transparent !important;
+}
+
+.visibility-hidden {
+  visibility: hidden;
 }
